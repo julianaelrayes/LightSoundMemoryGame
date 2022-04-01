@@ -2,19 +2,30 @@
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 
+let pattern = [];
+
 //Global Variables
-var pattern = [2, 2, 4, 3, 5, 1, 5, 6];
+//let pattern = [2, 2, 4, 3, 5, 1, 5, 6];
 var progress = 0; 
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
 var clueHoldTime = 1000; //how long to hold each clue's light/sound
+var numMistakes = 0;
+
+function generateRandomNum(){
+  pattern.push(Math.floor(Math.random() * 6) + 1);
+}
 
 function startGame(){
     //initialize game variables
     progress = 0;
     gamePlaying = true;
+    numMistakes = 0;
+    // Generates 8 random number between 1-6 for the array pattern 
+    for (let i = 0; i < 8; i++) 
+      generateRandomNum()
     // swap the Start and Stop buttons
     document.getElementById("startBtn").classList.add("hidden");
     document.getElementById("stopBtn").classList.remove("hidden");
@@ -66,6 +77,10 @@ function winGame(){
   alert("Congratulations! You've won.");
 }
 
+function loseStrike(){
+  alert("Incorrect! You have " + (3-numMistakes) + " attempts left");
+}
+
 function guess(btn){
   console.log("user guessed: " + btn);
   
@@ -90,8 +105,12 @@ function guess(btn){
     }
   }else{
     //Guess was incorrect
-    //GAME OVER: LOSE!
-    loseGame();
+    numMistakes += 1;
+    //strike #3: LOSE!
+    if(numMistakes >= 3)
+      loseGame();
+    else 
+      loseStrike();
   }
 }    
 
