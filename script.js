@@ -65,7 +65,10 @@ function playClueSequence(){
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
     delay += clueHoldTime 
     delay += cluePauseTime;
-    clueHoldTime -= 15;
+    clueHoldTime -= 10;
+    
+    if(i>7)
+      winGame();
   }
 }
 
