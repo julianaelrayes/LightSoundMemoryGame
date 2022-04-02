@@ -1,6 +1,7 @@
 // global constants
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
+const timeH = document.querySelector("h2");
 
 let pattern = [];
 
@@ -30,6 +31,7 @@ function startGame(){
     document.getElementById("startBtn").classList.add("hidden");
     document.getElementById("stopBtn").classList.remove("hidden");
     Math.random();
+    timer();
     playClueSequence();
 }
 
@@ -83,11 +85,9 @@ function loseStrike(){
 
 function guess(btn){
   console.log("user guessed: " + btn);
-  
   if(!gamePlaying){
     return;
   }
-  
   if(pattern[guessCounter] == btn){
     //Guess was correct!
     if(guessCounter == progress){
@@ -147,7 +147,6 @@ function stopTone(){
 }
 
 
-
 // Page Initialization
 // Init Sound Synthesizer
 var AudioContext = window.AudioContext || window.webkitAudioContext 
@@ -158,3 +157,30 @@ g.connect(context.destination)
 g.gain.setValueAtTime(0,context.currentTime)
 o.connect(g)
 o.start(0)
+
+function timer(){
+  var timeSecond = 300;
+  displayTime(timeSecond);
+  const countDown = setInterval(() => {
+  if(!gamePlaying){
+    clearInterval(countDown);
+    return;
+  }
+  timeSecond--;
+  displayTime(timeSecond);
+  if (timeSecond == 0 || timeSecond < 1) {
+    displayTime(timeSecond);
+    loseGame()
+    clearInterval(countDown);
+  }
+  }, 1000);
+}
+
+function displayTime(second) {
+  const min = Math.floor(second / 60);
+  const sec = Math.floor(second % 60);
+  timeH.innerHTML = `
+  ${min < 10 ? "0" : ""}${min}:${sec < 10 ? "0" : ""}${sec}
+  `;
+}
+

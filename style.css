@@ -28,7 +28,7 @@ button{
   background: lightgreen;
 }
 #button1:active, #button1.lit {
-    background:green;
+    background: green;
 }
 
 #button2 {
@@ -65,3 +65,4 @@ button{
 #button6:active, #button6.lit {
     background:darkorange;
 }
+
