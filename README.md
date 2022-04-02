@@ -49,13 +49,16 @@ The following **additional** features are implemented:
     - To help me hide images: https://stackoverflow.com/questions/1999071/show-hide-image-on-click
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
-[YOUR ANSWER HERE]
+
+- I encountered some challenges when trying to upload the images inside the buttons. After finding the images I wanted to use and uploading them to the assets folder, I did not know how to implement them inside my buttons. I first tried adding the images tags inside the body but that just added the images outside the buttons. To solve this issue I first started analyzing the code I already had and then I thought about putting these tags inside each button tag. This almost worked for me. By now I had a box with a blue question mark inside each button. After, I started researching on the internet to see how other people implemented images in their code. I realized that instead of calling the folder of assets I could use each of the links for the images. This worked well. Finally, my last issue was the size of the images. I solved this problem by playing with the width and height until I got the desired look for my game.
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+
+- After completing this submission, I started thinking about how could I upload future projects that I am planning to work on. I wonder how would I be able to upload this without needing another platform. After doing some research to complete my code, I came to read about HTTP and how it connects us and our website request to the remote server that houses all website data. I would love to know more about these rules and how does the framework work. I would like to get deep into the subject to better understand web development. Also, I would like to learn more about what CMS is and how it is different from a site builder. 
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+
+- If I had had more time to work on this project, I could have used it to complete more additional features. I would have made my game buttons sound like one of the Among Us songs so my game would be more harmonical. Also, I would have made the images of the characters appear only when the buttons are clicked instead of just changing the colors. After, I would have made the timer last about 15 seconds on each turn instead of 5 minutes. This would automatically reset after the user guess correctly. Finally, I would have tried to make my game somehow different from others. I would have tried to think outside the box and implement new ideas into the game.
 
 
 
