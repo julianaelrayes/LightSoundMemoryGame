@@ -6,16 +6,14 @@ Time spent: **3** hours spent in total
 
 Link to project: [https://lightsoundmemorygamejuliana.glitch.me]
 
-**Features implemented:**
-* [x] "Start" button toggles between "Start" and "Stop" when clicked. 
-* [x] Game buttons each light up and play a sound when clicked. 
+**Features implemented:** 
 * [x] Computer plays back sequence of clues including sound and visual cue for each button.
 * [x] Play progresses to the next turn (the user gets the next step in the pattern) after a correct guess. 
 * [x] User wins the game after guessing a complete pattern or loses the game after 3 incorrect guesses.
 * [x] Playback speeds up on each turn.
 * [x] Computer picks a different pattern each time the game is played.
-* [x]  User has a limited amount of time (5 minutes) to finish the game.
-* [x]  User can see a countdown timer on the screen when the game starts.
+* [x] User can see a countdown timer on the screen when the game starts and has a limited amount of time (5 minutes) to finish the game.
+* [x] "Start" button toggles between "Start" and "Stop" when clicked.
 
 ## Video Walkthrough (GIF)
 
